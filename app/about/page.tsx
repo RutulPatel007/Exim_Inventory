@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FaFlask, FaUsers, FaTruck, FaAward } from 'react-icons/fa'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+
 import MoleculeBackground from '../components/MoleculeBackground'
 
 const features = [

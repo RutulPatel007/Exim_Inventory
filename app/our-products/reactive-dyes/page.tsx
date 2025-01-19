@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FaCheckCircle, FaIndustry } from 'react-icons/fa'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 

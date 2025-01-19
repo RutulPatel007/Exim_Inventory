@@ -1,11 +1,10 @@
 'use client'
 
-import Image from 'next/image'
+
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaArrowRight, FaFlask, FaAtom, FaVial } from 'react-icons/fa'
-import Header from './components/Header'
-import Footer from './components/Footer'
+
 import MoleculeBackground from './components/MoleculeBackground'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -110,7 +109,7 @@ export default function Home() {
             >
               <h2 className="text-3xl font-bold mb-6">Our Commitment to Quality</h2>
               <p className="text-lg mb-8 text-gray-700">
-                At ChemInnovate, quality is not just a goal—it's a fundamental part of our process. 
+                At ChemInnovate, quality is not just a goal—it&apos;s a fundamental part of our process. 
                 We adhere to rigorous quality control measures and maintain certifications that demonstrate our commitment to excellence.
               </p>
               <Button asChild variant="outline">

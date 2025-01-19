@@ -3,8 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import MoleculeBackground from '../components/MoleculeBackground'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -49,7 +47,7 @@ export default function ContactPage() {
           >
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
             <p className="mb-6">
-              We're here to answer any questions you may have about our products or services. Reach out to us and we'll respond as soon as we can.
+              We&apos;re here to answer any questions you may have about our products or services. Reach out to us and we&apos;ll respond as soon as we can.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
