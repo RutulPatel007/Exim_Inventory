@@ -5,8 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaFlask, FaAtom, FaVial, FaCube, FaTint } from 'react-icons/fa'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+
 import MoleculeBackground from '../components/MoleculeBackground'
 
 const products = [
@@ -21,7 +20,6 @@ export default function OurProductsPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-green-50">
       <MoleculeBackground />
-      <Header />
       <main className="flex-grow container mx-auto px-4 py-8 relative z-10">
         <motion.h1 
           className="text-4xl font-bold text-center mb-12"
@@ -67,7 +65,7 @@ export default function OurProductsPage() {
           ))}
         </div>
       </main>
-      <Footer />
+      
     </div>
   )
 }
