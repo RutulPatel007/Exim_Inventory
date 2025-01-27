@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FaCheckCircle, FaIndustry } from 'react-icons/fa'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -20,6 +21,33 @@ const applications = [
   'Wood staining',
   'Printing inks',
 ]
+
+
+const products = [
+  { id: 1, name: 'Black RLI', ciNo: 'Solvent Black 29' },
+  { id: 2, name: 'Black RE', ciNo: 'Solvent Black 27' },
+  { id: 3, name: 'Black REH', ciNo: 'Solvent Black 27' },
+  { id: 4, name: 'Black REV', ciNo: 'Solvent Black 27' },
+  { id: 5, name: 'Black RLSN', ciNo: 'Solvent Black 45' },
+  { id: 6, name: 'Brown 2RL', ciNo: 'Solvent Brown 43' },
+  { id: 7, name: 'Brown GLS', ciNo: 'Mixture' },
+  { id: 8, name: 'Fire Red GLS', ciNo: 'Solvent Red 89' },
+  { id: 9, name: 'Red 3BLSE', ciNo: 'Solvent Red 91' },
+  { id: 10, name: 'Red 2BLSE', ciNo: 'Solvent Red 122' },
+  { id: 11, name: 'Red 2BLSE-YR', ciNo: 'Solvent Red 122' },
+  { id: 12, name: 'Red G', ciNo: 'Solvent Red 125' },
+  { id: 13, name: 'Red 2BL', ciNo: 'Solvent Red 132' },
+  { id: 14, name: 'Fire Red BL', ciNo: 'Solvent Red 160' },
+  { id: 15, name: 'Yellow R', ciNo: 'Solvent Yellow 82' },
+  { id: 16, name: 'Yellow 2RLS', ciNo: 'Solvent Yellow 62' },
+  { id: 17, name: 'Orange G', ciNo: 'Solvent Orange 11' },
+  { id: 18, name: 'Orange RP', ciNo: 'Solvent Orange 54' },
+  { id: 19, name: 'Orange RL', ciNo: 'Solvent Orange 62' },
+  { id: 20, name: 'Orange R', ciNo: 'Solvent Orange 99' },
+  { id: 21, name: 'Blue 2GLN', ciNo: 'Solvent Blue 48' },
+  { id: 22, name: 'Blue GL', ciNo: 'Solvent Blue 70' },
+  { id: 23, name: 'Dark Violet R', ciNo: '-' }
+];
 
 export default function SolventDyesPage() {
   return (
@@ -104,6 +132,50 @@ export default function SolventDyesPage() {
           <li>Customizable formulations to meet specific requirements</li>
         </ul>
       </motion.div>
+
+
+      <motion.h2 
+        className="text-2xl font-semibold mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        Solvent Dyes
+      </motion.h2>
+      
+
+
+      <motion.div 
+        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+      >
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Dye Name</TableHead>
+              <TableHead>Dye Code</TableHead>
+              {/* <TableHead>Dye Color</TableHead> */}
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {products.map((dye, index) => (
+              <motion.tr 
+                key={dye.ciNo}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+              >
+                <TableCell>{dye.name}</TableCell>
+                <TableCell>{dye.ciNo}</TableCell>
+                {/* <TableCell>{dye.color}</TableCell> */}
+              </motion.tr>
+            ))}
+          </TableBody>
+        </Table>
+      </motion.div>
+
     </div>
   )
 }

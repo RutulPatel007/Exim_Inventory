@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FaCheckCircle, FaIndustry } from 'react-icons/fa'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -20,6 +21,30 @@ const applications = [
   'Pigment synthesis',
   'Pharmaceutical intermediates',
 ]
+
+
+const data = [
+  { productName: "1-Phenyl-3-Methyl-5-Pyrazolone", casNo: "89-25-8" },
+  { productName: "Para Tolyl -3-Methyl-5-Pyrazolone", casNo: "86-92-0" },
+  { productName: "1-(2-Chloro Phenyl)-3-Methyl-5-Pyrazolone", casNo: "14580-22-4" },
+  { productName: "1(3-Chloro Phenyl)-3-Methyl-5-Pyrazolone", casNo: "90-31-3" },
+  { productName: "1-Phenyl-3-Carexthoxy-5-Pyrazolone", casNo: "89-33-8" },
+  { productName: "3-Methyl-5-Pyrazolone", casNo: "108-26-9" },
+  { productName: "1-(3-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "119-17-5" },
+  { productName: "1-(4-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "89-36-1" },
+  { productName: "1-(4-Sulphophenyl)-3-Carboxy-5-Pyrazolone", casNo: "118-47-8" },
+  { productName: "1-(2-Chloro-4-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "–" },
+  { productName: "1-(2-Methyl-5-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "5466-86-4" },
+  { productName: "1-(2-Methyl-4-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "118-07-0" },
+  { productName: "1-(4-Sulphamido phenyl)-3-Methyl-5-Pyrazolone", casNo: "13269-73-3" },
+  { productName: "1-(3-Sulphamodi phenyl)-3-Methyl-5-Pyrazolone", casNo: "89-29-2" },
+  { productName: "1-(2:5 Disulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "54817-63-9" },
+  { productName: "1-(2-Chloro-5-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "88-76-6" },
+  { productName: "3-Methyl-1-(3-Sulphophenyl)-5-Pyrazolimine", casNo: "68083-38-5" },
+  { productName: "3-Methyl-1-Phenyl-5-Pyrazolimine", casNo: "1131-18-6" },
+  { productName: "2-Chloro-5-Sulphophenyl-3-Methyl-5-Pyrazolimine", casNo: "68227-68-9" },
+  { productName: "3 Methyl-1(4-Chloro Phenyl)-5-Pyrazolimine", casNo: "13024-90-3" },
+];
 
 export default function DyesIntermediatePage() {
   return (
@@ -103,6 +128,50 @@ export default function DyesIntermediatePage() {
           our intermediates meet the highest standards of purity and performance. 
           We also offer custom synthesis services to meet specific requirements of our clients.
         </p>
+      </motion.div>
+
+
+
+      <motion.h2 
+        className="text-2xl font-semibold mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        Reactive Cold Dyes
+      </motion.h2>
+
+
+
+      <motion.div 
+        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+      >
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Dye Name</TableHead>
+              <TableHead>Dye Code</TableHead>
+              {/* <TableHead>Dye Color</TableHead> */}
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {data.map((dye, index) => (
+              <motion.tr 
+                key={dye.casNo}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+              >
+                <TableCell>{dye.productName}</TableCell>
+                <TableCell>{dye.casNo}</TableCell>
+                {/* <TableCell>{dye.color}</TableCell> */}
+              </motion.tr>
+            ))}
+          </TableBody>
+        </Table>
       </motion.div>
     </div>
   )
