@@ -6,13 +6,7 @@ import { FaCheckCircle, FaIndustry } from 'react-icons/fa'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-const sample = [
-  { name: 'Reactive Blue 19', code: 'RB19', color: 'Turquoise Blue' },
-  { name: 'Reactive Red 195', code: 'RR195', color: 'Scarlet Red' },
-  { name: 'Reactive Yellow 145', code: 'RY145', color: 'Golden Yellow' },
-  { name: 'Reactive Black 5', code: 'RB5', color: 'Jet Black' },
-  { name: 'Reactive Orange 122', code: 'RO122', color: 'Bright Orange' },
-]
+
 
 
 const reactiveColdDyes = [
