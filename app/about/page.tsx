@@ -24,7 +24,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          About Chemzones
+          About Exim Inventory
         </motion.h1>
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <motion.div
@@ -34,7 +34,7 @@ export default function AboutPage() {
           >
             <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
             <p className="mb-4">
-              Founded in 2005, Chemzones has been at the forefront of chemical innovation for over two decades. Our passion for science and commitment to quality have made us a trusted partner in the industry.
+              Founded in 2005, Exim Inventory has been at the forefront of chemical innovation for over two decades. Our passion for science and commitment to quality have made us a trusted partner in the industry.
             </p>
             <p>
               We specialize in developing and manufacturing high-purity chemicals for a wide range of applications, from industrial processes to cutting-edge research laboratories.

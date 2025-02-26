@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { FaCheckCircle, FaIndustry } from 'react-icons/fa'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const advantages = [
@@ -22,29 +20,32 @@ const applications = [
   'Pharmaceutical intermediates',
 ]
 
-
 const data = [
-  { productName: "1-Phenyl-3-Methyl-5-Pyrazolone", casNo: "89-25-8" },
-  { productName: "Para Tolyl -3-Methyl-5-Pyrazolone", casNo: "86-92-0" },
-  { productName: "1-(2-Chloro Phenyl)-3-Methyl-5-Pyrazolone", casNo: "14580-22-4" },
-  { productName: "1(3-Chloro Phenyl)-3-Methyl-5-Pyrazolone", casNo: "90-31-3" },
-  { productName: "1-Phenyl-3-Carexthoxy-5-Pyrazolone", casNo: "89-33-8" },
-  { productName: "3-Methyl-5-Pyrazolone", casNo: "108-26-9" },
-  { productName: "1-(3-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "119-17-5" },
-  { productName: "1-(4-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "89-36-1" },
-  { productName: "1-(4-Sulphophenyl)-3-Carboxy-5-Pyrazolone", casNo: "118-47-8" },
-  { productName: "1-(2-Chloro-4-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "–" },
-  { productName: "1-(2-Methyl-5-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "5466-86-4" },
-  { productName: "1-(2-Methyl-4-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "118-07-0" },
-  { productName: "1-(4-Sulphamido phenyl)-3-Methyl-5-Pyrazolone", casNo: "13269-73-3" },
-  { productName: "1-(3-Sulphamodi phenyl)-3-Methyl-5-Pyrazolone", casNo: "89-29-2" },
-  { productName: "1-(2:5 Disulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "54817-63-9" },
-  { productName: "1-(2-Chloro-5-Sulphophenyl)-3-Methyl-5-Pyrazolone", casNo: "88-76-6" },
-  { productName: "3-Methyl-1-(3-Sulphophenyl)-5-Pyrazolimine", casNo: "68083-38-5" },
-  { productName: "3-Methyl-1-Phenyl-5-Pyrazolimine", casNo: "1131-18-6" },
-  { productName: "2-Chloro-5-Sulphophenyl-3-Methyl-5-Pyrazolimine", casNo: "68227-68-9" },
-  { productName: "3 Methyl-1(4-Chloro Phenyl)-5-Pyrazolimine", casNo: "13024-90-3" },
+  "1-Phenyl-3-Methyl-5-Pyrazolone",
+  "Para Tolyl -3-Methyl-5-Pyrazolone",
+  "1-(2-Chloro Phenyl)-3-Methyl-5-Pyrazolone",
+  "1(3-Chloro Phenyl)-3-Methyl-5-Pyrazolone",
+  "1-Phenyl-3-Carexthoxy-5-Pyrazolone",
+  "3-Methyl-5-Pyrazolone",
+  "1-(3-Sulphophenyl)-3-Methyl-5-Pyrazolone",
+  "1-(4-Sulphophenyl)-3-Methyl-5-Pyrazolone",
+  "1-(4-Sulphophenyl)-3-Carboxy-5-Pyrazolone",
+  "1-(2-Chloro-4-Sulphophenyl)-3-Methyl-5-Pyrazolone",
+  "1-(2-Methyl-5-Sulphophenyl)-3-Methyl-5-Pyrazolone",
+  "1-(2-Methyl-4-Sulphophenyl)-3-Methyl-5-Pyrazolone",
+  "1-(4-Sulphamido phenyl)-3-Methyl-5-Pyrazolone",
+  "1-(3-Sulphamodi phenyl)-3-Methyl-5-Pyrazolone",
+  "1-(2:5 Disulphophenyl)-3-Methyl-5-Pyrazolone",
+  "1-(2-Chloro-5-Sulphophenyl)-3-Methyl-5-Pyrazolone",
+  "3-Methyl-1-(3-Sulphophenyl)-5-Pyrazolimine",
+  "3-Methyl-1-Phenyl-5-Pyrazolimine",
+  "2-Chloro-5-Sulphophenyl-3-Methyl-5-Pyrazolimine",
+  "3 Methyl-1(4-Chloro Phenyl)-5-Pyrazolimine",
 ];
+
+const midIndex = Math.ceil(data.length / 2);
+const leftData = data.slice(0, midIndex);
+const rightData = data.slice(midIndex);
 
 export default function DyesIntermediatePage() {
   return (
@@ -58,7 +59,7 @@ export default function DyesIntermediatePage() {
         Dyes Intermediate
       </motion.h1>
       <motion.p 
-        className="mb-8 text-lg text-gray-700"
+        className="mb-8 text-lg text-gray-700 text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -67,7 +68,7 @@ export default function DyesIntermediatePage() {
         components in the synthesis of various dyes. Our intermediates ensure 
         consistent quality and performance in dye production.
       </motion.p>
-      
+
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -115,7 +116,7 @@ export default function DyesIntermediatePage() {
       </div>
 
       <motion.div
-        className="bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6"
+        className="bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6 mb-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
@@ -130,10 +131,8 @@ export default function DyesIntermediatePage() {
         </p>
       </motion.div>
 
-
-
       <motion.h2 
-        className="text-2xl font-semibold mb-4"
+        className="text-2xl font-semibold mb-4 text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
@@ -141,39 +140,46 @@ export default function DyesIntermediatePage() {
         Reactive Cold Dyes
       </motion.h2>
 
-
-
       <motion.div 
-        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
+        className="grid md:grid-cols-2 gap-8 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
       >
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Dye Name</TableHead>
-              <TableHead>Dye Code</TableHead>
-              {/* <TableHead>Dye Color</TableHead> */}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {data.map((dye, index) => (
-              <motion.tr 
-                key={dye.casNo}
+        {/* Left Column */}
+        <div>
+          <ul className="list-none space-y-2 text-center">
+            {leftData.map((dye, index) => (
+              <motion.li 
+                key={index} 
+                className="py-2 bg-gray-100 rounded-lg shadow-sm"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
               >
-                <TableCell>{dye.productName}</TableCell>
-                <TableCell>{dye.casNo}</TableCell>
-                {/* <TableCell>{dye.color}</TableCell> */}
-              </motion.tr>
+                {dye}
+              </motion.li>
             ))}
-          </TableBody>
-        </Table>
+          </ul>
+        </div>
+
+        {/* Right Column */}
+        <div>
+          <ul className="list-none space-y-2 text-center">
+            {rightData.map((dye, index) => (
+              <motion.li 
+                key={index} 
+                className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+              >
+                {dye}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </motion.div>
     </div>
   )
 }
-

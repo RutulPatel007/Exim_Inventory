@@ -9,11 +9,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import MoleculeBackground from '../components/MoleculeBackground'
 
 const products = [
-  { name: 'Reactive Dyes', description: 'High-quality dyes for cotton and other cellulosic fibers', link: '/our-products/reactive-dyes', icon: FaFlask, image: 'https://example.com/reactive-dyes.jpg' },
-  { name: 'Direct Dyes', description: 'Versatile dyes for cotton, wool, and silk', link: '/our-products/direct-dyes', icon: FaAtom, image: 'https://example.com/direct-dyes.jpg' },
-  { name: 'Acid Dyes', description: 'Specialized dyes for wool, silk, and nylon', link: '/our-products/acid-dyes', icon: FaVial, image: 'https://example.com/acid-dyes.jpg' },
-  { name: 'Dyes Intermediate', description: 'Essential components for dye manufacturing', link: '/our-products/dyes-intermediate', icon: FaCube, image: 'https://example.com/dyes-intermediate.jpg' },
-  { name: 'Solvent Dyes', description: 'Dyes for coloring plastics, fuels, and other non-polar materials', link: '/our-products/solvent-dyes', icon: FaTint, image: 'https://example.com/solvent-dyes.jpg' },
+  { name: 'Reactive Dyes', description: 'High-quality dyes for cotton and other cellulosic fibers', link: '/our-products/reactive-dyes', icon: FaFlask, image: '/images/reactive_dyes.jpg' },
+  { name: 'Direct Dyes', description: 'Versatile dyes for cotton, wool, and silk', link: '/our-products/direct-dyes', icon: FaAtom, image: '/images/direct_dyes.png' },
+  { name: 'Acid Dyes', description: 'Specialized dyes for wool, silk, and nylon', link: '/our-products/acid-dyes', icon: FaVial, image:'/images/acid_dyes.jpg' },
+  { name: 'Dyes Intermediate', description: 'Essential components for dye manufacturing', link: '/our-products/dyes-intermediate', icon: FaCube, image: '/images/dyes_intermediate.jpg' },
+  { name: 'Solvent Dyes', description: 'Dyes for coloring plastics, fuels, and other non-polar materials', link: '/our-products/solvent-dyes', icon: FaTint, image: '/images/solvent_dyes.jpg' },
 ]
 
 export default function OurProductsPage() {

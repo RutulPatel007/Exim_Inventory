@@ -34,7 +34,7 @@ export default function QualityPage() {
         >
           <h2 className="text-2xl font-semibold mb-4">Our Commitment to Quality</h2>
           <p className="mb-4">
-            At ChemInnovate, quality is not just a goal—it&apos;s a fundamental part of our process. We are committed to delivering products that meet the highest standards of purity, consistency, and performance.
+            At Exim Inventory, quality is not just a goal—it&apos;s a fundamental part of our process. We are committed to delivering products that meet the highest standards of purity, consistency, and performance.
           </p>
           <p>
             Our state-of-the-art facilities and expert team ensure that every chemical we produce undergoes rigorous quality control measures. We adhere to Good Manufacturing Practices (GMP) and maintain certifications that demonstrate our commitment to excellence.

@@ -34,17 +34,30 @@ export default function Header() {
       transition={{ type: 'spring', stiffness: 100 }}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <motion.div
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.5 }}
-          >
-            <FaFlask className="w-8 h-8 text-green-500" />
-          </motion.div>
-          <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-500">
-            ChemZones
-          </span>
-        </Link>
+      <Link href="/" className="flex items-center">
+  {/* Shift Logo Left */}
+  <motion.img 
+    src="/images/logo.png" 
+    alt="Exim Inventory Logo" 
+    className="w-14 h-14 mr-2 -ml-20"  // Increased size & shifted left
+    whileHover={{ scale: 1.1 }}
+    transition={{ duration: 0.3 }}
+  />
+
+  {/* Text */}
+  <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-500">
+    Exim Inventory
+  </span>
+
+  {/* Beaker Symbol After Text */}
+  <motion.div
+    className="ml-2" // Ensure spacing after text
+    whileHover={{ rotate: 360 }}
+    transition={{ duration: 0.5 }}
+  >
+    <FaFlask className="w-8 h-8 text-green-500" />
+  </motion.div>
+</Link>
         <nav className="hidden md:block">
           <ul className="flex space-x-4">
             {['Home', 'About'].map((item) => (

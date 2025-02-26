@@ -52,15 +52,20 @@ export default function ContactPage() {
             <div className="space-y-4">
               <div className="flex items-center">
                 <FaPhone className="w-6 h-6 text-green-500 mr-2" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9664938784</span>
               </div>
               <div className="flex items-center">
                 <FaEnvelope className="w-6 h-6 text-green-500 mr-2" />
-                <span>info@cheminnovate.com</span>
+                <span>info@eximinventory.com</span>
               </div>
               <div className="flex items-center">
                 <FaMapMarkerAlt className="w-6 h-6 text-green-500 mr-2" />
-                <span>123 Chemical Lane, Science City, ST 12345</span>
+                <span>28, Shiv Estate,
+                      B/h Hotel Chatako,
+                      National Highway No.8,
+                      Ahmedabad -380026,
+                      Gujarat (India)
+                </span>
               </div>
             </div>
           </motion.div>

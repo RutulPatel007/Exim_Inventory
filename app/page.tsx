@@ -85,9 +85,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold mb-6">About ChemInnovate</h2>
+              <h2 className="text-3xl font-bold mb-6">About Exim Inventory</h2>
               <p className="text-lg mb-8 text-gray-700">
-                With over two decades of experience, ChemInnovate has been at the forefront of chemical innovation. 
+                With over two decades of experience, Exim Inventory has been at the forefront of chemical innovation. 
                 We specialize in developing and manufacturing high-purity dyes and chemical products for a wide range of applications, 
                 from textiles to advanced research laboratories.
               </p>
@@ -109,7 +109,7 @@ export default function Home() {
             >
               <h2 className="text-3xl font-bold mb-6">Our Commitment to Quality</h2>
               <p className="text-lg mb-8 text-gray-700">
-                At ChemInnovate, quality is not just a goal—it&apos;s a fundamental part of our process. 
+                At Exim Inventory, quality is not just a goal—it&apos;s a fundamental part of our process. 
                 We adhere to rigorous quality control measures and maintain certifications that demonstrate our commitment to excellence.
               </p>
               <Button asChild variant="outline">
