@@ -137,7 +137,7 @@ export default function DyesIntermediatePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
-        Reactive Cold Dyes
+        Our Range of Dye Intermediates
       </motion.h2>
 
       <motion.div 

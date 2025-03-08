@@ -32,7 +32,9 @@ const reactiveColdDyes = [
   { name: 'Reactive Tur. Blue MGN', code: 'Reactive Blue - 140', light: '6', washing: '4', perspiration: '4', hypochlorite: '2-3', dischargeability: 'P', color: '#00CED1' },
   { name: 'Reactive Tur. Blue Ha5G', code: 'Reactive Blue - 71', light: '6', washing: '3-4', perspiration: '4-5', hypochlorite: '3-4', dischargeability: 'P', color: '#5F9EA0' },
 ];
-
+const midIndex = Math.ceil(reactiveColdDyes.length / 2);
+const leftData = reactiveColdDyes.slice(0, midIndex);
+const rightData = reactiveColdDyes.slice(midIndex);
 
 
 const reactiveHeDyes = [
@@ -55,6 +57,10 @@ const reactiveHeDyes = [
   { name: 'Reactive Navy Blue HEGN', code: 'Reactive Blue - 198', light: '4-5', washing: '4-5', perspiration: '3-4', hypochlorite: '3', dischargeability: 'F', color: '#4682B4' },
 ];
 
+const midIndex2 = Math.ceil(reactiveHeDyes.length / 2);
+const leftData2 = reactiveHeDyes.slice(0, midIndex2);
+const rightData2 = reactiveHeDyes.slice(midIndex2);
+
 
 const reactiveHotDyes = [
   { name: 'Reactive Yellow H7GL', code: 'Reactive Yellow - 57', light: '6', washing: '5', perspiration: '5', hypochlorite: '2', dischargeability: 'G', color: '#FFFF00' },
@@ -73,6 +79,10 @@ const reactiveHotDyes = [
   { name: 'Reactive Tur. Blue H5G', code: 'Reactive Blue - 25', light: '5-6', washing: '4-5', perspiration: '3', hypochlorite: '3-4', dischargeability: 'P', color: '#00CED1' },
   { name: 'Reactive Navy Blue RX', code: 'Reactive Blue - 59', light: '3', washing: '3-4', perspiration: '4-5', hypochlorite: '1', dischargeability: 'P', color: '#000080' },
 ];
+
+const midIndex3 = Math.ceil(reactiveHotDyes.length / 2);
+const leftData3 = reactiveHotDyes.slice(0, midIndex3);
+const rightData3 = reactiveHotDyes.slice(midIndex3);
 
 
 
@@ -94,6 +104,9 @@ const reactiveMeDyes = [
   { name: 'Reactive Copper Blue BF', code: 'Reactive Blue - 221', light: '6-7', washing: '4', perspiration: '4', hypochlorite: '2', dischargeability: 'G', color: '#008080' },
   { name: 'Reactive Blue BF', code: 'Reactive Blue - 222', light: '4-5', washing: '4', perspiration: '4', hypochlorite: '2', dischargeability: 'G', color: '#0000CD' },
 ];
+const midIndex4 = Math.ceil(reactiveMeDyes.length / 2);
+const leftData4 = reactiveMeDyes.slice(0, midIndex4);
+const rightData4 = reactiveMeDyes.slice(midIndex4);
 
 const reactiveVinylSulphoneBaseDyes = [
   { name: 'Reactive Red 4B', code: 'Reactive Red - 24', light: '6', washing: '3-4', perspiration: '5', hypochlorite: '1', dischargeability: 'G' },
@@ -122,6 +135,9 @@ const reactiveVinylSulphoneBaseDyes = [
   { name: 'Reactive Navy Blue GG', code: 'Reactive Blue - 203', light: '4-5', washing: '3-4', perspiration: '5', hypochlorite: '1', dischargeability: 'F' },
   { name: 'Reactive Black WNN', code: 'Reactive Black -5', light: '5', washing: '4-5', perspiration: '5', hypochlorite: '1', dischargeability: 'G' }
 ];
+const midIndex5 = Math.ceil(reactiveVinylSulphoneBaseDyes.length / 2);
+const leftData5 = reactiveVinylSulphoneBaseDyes.slice(0, midIndex5);
+const rightData5 = reactiveVinylSulphoneBaseDyes.slice(midIndex5);
 
 
 
@@ -146,6 +162,9 @@ const reactivePrintingDyes = [
   { name: 'Reactive Red P6b', code: 'Reactive Red 218', suitability: 'Poor', solubility: '1', dischargebility: 'L', hypochlorite: '+', bleach: '+', reactivities: '70', printing: '4', light: '4-5', rubbing: '4-5', washing: '3', perspiration: '5-4', acidic: '((4-5/4-5) / (4-5/4-5)' },
   { name: 'Reactive T. Blue Pgr', code: 'Reactive Blue 72', suitability: 'Poor', solubility: '1', dischargebility: 'L', hypochlorite: '+', bleach: '+', reactivities: '72', printing: '4', light: '5', rubbing: '4', washing: '3-4', perspiration: '4', acidic: '((4/3) / (4-5/4)' }
 ];
+const midIndex6 = Math.ceil(reactivePrintingDyes.length / 2);
+const leftData6 = reactivePrintingDyes.slice(0, midIndex6);
+const rightData6 = reactivePrintingDyes.slice(midIndex6);
 
 
 const advantages = [
@@ -240,35 +259,47 @@ export default function ReactiveDyesPage() {
         Reactive Cold Dyes
       </motion.h2>
       <motion.div 
-        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-      >
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Dye Name</TableHead>
-              <TableHead>Dye Code</TableHead>
-              {/* <TableHead>Dye Color</TableHead> */}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {reactiveColdDyes.map((dye, index) => (
-              <motion.tr 
-                key={dye.code}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              >
-                <TableCell>{dye.name}</TableCell>
-                <TableCell>{dye.code}</TableCell>
-                {/* <TableCell>{dye.color}</TableCell> */}
-              </motion.tr>
-            ))}
-          </TableBody>
-        </Table>
-      </motion.div>
+                          className="grid md:grid-cols-2 gap-8 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 1 }}
+                        >
+                          {/* Left Column */}
+                          <div>
+                            <ul className="list-none space-y-2 text-center">
+                              {leftData.map((productName, index) => (
+                                <motion.li 
+                                  key={index} 
+                                  className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                >
+                                  {productName.name}  
+            
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                  
+                          {/* Right Column */}
+                          <div>
+                            <ul className="list-none space-y-2 text-center">
+                              {rightData.map((productName, index) => (
+                                <motion.li 
+                                  key={index} 
+                                  className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                  initial={{ opacity: 0, x: 20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                >
+                                  {productName.name}
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+      
 
       <motion.h2 
         className="text-2xl font-semibold mb-4"
@@ -278,36 +309,48 @@ export default function ReactiveDyesPage() {
       >
         Reactive He Dyes
       </motion.h2>
-      <motion.div 
-        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-      >
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Dye Name</TableHead>
-              <TableHead>Dye Code</TableHead>
-              {/* <TableHead>Dye Color</TableHead> */}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {reactiveHeDyes.map((dye, index) => (
-              <motion.tr 
-                key={dye.code}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              >
-                <TableCell>{dye.name}</TableCell>
-                <TableCell>{dye.code}</TableCell>
-                {/* <TableCell>{dye.color}</TableCell> */}
-              </motion.tr>
-            ))}
-          </TableBody>
-        </Table>
-      </motion.div>
+     <motion.div 
+                         className="grid md:grid-cols-2 gap-8 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6"
+                         initial={{ opacity: 0, y: 20 }}
+                         animate={{ opacity: 1, y: 0 }}
+                         transition={{ duration: 0.5, delay: 1 }}
+                       >
+                         {/* Left Column */}
+                         <div>
+                           <ul className="list-none space-y-2 text-center">
+                             {leftData2.map((productName, index) => (
+                               <motion.li 
+                                 key={index} 
+                                 className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                 initial={{ opacity: 0, x: -20 }}
+                                 animate={{ opacity: 1, x: 0 }}
+                                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                               >
+                                 {productName.name}  
+           
+                               </motion.li>
+                             ))}
+                           </ul>
+                         </div>
+                 
+                         {/* Right Column */}
+                         <div>
+                           <ul className="list-none space-y-2 text-center">
+                             {rightData2.map((productName, index) => (
+                               <motion.li 
+                                 key={index} 
+                                 className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                 initial={{ opacity: 0, x: 20 }}
+                                 animate={{ opacity: 1, x: 0 }}
+                                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                               >
+                                 {productName.name}
+                               </motion.li>
+                             ))}
+                           </ul>
+                         </div>
+                       </motion.div>
+     
 
 
       <motion.h2 
@@ -319,36 +362,48 @@ export default function ReactiveDyesPage() {
         Reactive Hot Dyes
       </motion.h2>
 
-      <motion.div 
-        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-      >
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Dye Name</TableHead>
-              <TableHead>Dye Code</TableHead>
-              {/* <TableHead>Dye Color</TableHead> */}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {reactiveHotDyes.map((dye, index) => (
-              <motion.tr 
-                key={dye.code}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              >
-                <TableCell>{dye.name}</TableCell>
-                <TableCell>{dye.code}</TableCell>
-                {/* <TableCell>{dye.color}</TableCell> */}
-              </motion.tr>
-            ))}
-          </TableBody>
-        </Table>
-      </motion.div>
+     <motion.div 
+                         className="grid md:grid-cols-2 gap-8 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6"
+                         initial={{ opacity: 0, y: 20 }}
+                         animate={{ opacity: 1, y: 0 }}
+                         transition={{ duration: 0.5, delay: 1 }}
+                       >
+                         {/* Left Column */}
+                         <div>
+                           <ul className="list-none space-y-2 text-center">
+                             {leftData3.map((productName, index) => (
+                               <motion.li 
+                                 key={index} 
+                                 className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                 initial={{ opacity: 0, x: -20 }}
+                                 animate={{ opacity: 1, x: 0 }}
+                                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                               >
+                                 {productName.name}  
+           
+                               </motion.li>
+                             ))}
+                           </ul>
+                         </div>
+                 
+                         {/* Right Column */}
+                         <div>
+                           <ul className="list-none space-y-2 text-center">
+                             {rightData3.map((productName, index) => (
+                               <motion.li 
+                                 key={index} 
+                                 className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                 initial={{ opacity: 0, x: 20 }}
+                                 animate={{ opacity: 1, x: 0 }}
+                                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                               >
+                                 {productName.name}
+                               </motion.li>
+                             ))}
+                           </ul>
+                         </div>
+                       </motion.div>
+     
 
 
      
@@ -365,36 +420,47 @@ export default function ReactiveDyesPage() {
       </motion.h2>
 
       <motion.div 
-        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-      >
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Dye Name</TableHead>
-              <TableHead>Dye Code</TableHead>
-              {/* <TableHead>Dye Color</TableHead> */}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {reactiveMeDyes.map((dye, index) => (
-              <motion.tr 
-                key={dye.code}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              >
-                <TableCell>{dye.name}</TableCell>
-                <TableCell>{dye.code}</TableCell>
-                {/* <TableCell>{dye.color}</TableCell> */}
-              </motion.tr>
-            ))}
-          </TableBody>
-        </Table>
-      </motion.div>
-
+                          className="grid md:grid-cols-2 gap-8 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 1 }}
+                        >
+                          {/* Left Column */}
+                          <div>
+                            <ul className="list-none space-y-2 text-center">
+                              {leftData4.map((productName, index) => (
+                                <motion.li 
+                                  key={index} 
+                                  className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                >
+                                  {productName.name}  
+            
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                  
+                          {/* Right Column */}
+                          <div>
+                            <ul className="list-none space-y-2 text-center">
+                              {rightData4.map((productName, index) => (
+                                <motion.li 
+                                  key={index} 
+                                  className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                  initial={{ opacity: 0, x: 20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                >
+                                  {productName.name}
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+      
 
 
 
@@ -408,35 +474,47 @@ export default function ReactiveDyesPage() {
       </motion.h2>
 
       <motion.div 
-        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-      >
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Dye Name</TableHead>
-              <TableHead>Dye Code</TableHead>
-              {/* <TableHead>Dye Color</TableHead> */}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {reactiveVinylSulphoneBaseDyes.map((dye, index) => (
-              <motion.tr 
-                key={dye.code}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              >
-                <TableCell>{dye.name}</TableCell>
-                <TableCell>{dye.code}</TableCell>
-                {/* <TableCell>{dye.color}</TableCell> */}
-              </motion.tr>
-            ))}
-          </TableBody>
-        </Table>
-      </motion.div>
+                          className="grid md:grid-cols-2 gap-8 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 1 }}
+                        >
+                          {/* Left Column */}
+                          <div>
+                            <ul className="list-none space-y-2 text-center">
+                              {leftData5.map((productName, index) => (
+                                <motion.li 
+                                  key={index} 
+                                  className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                >
+                                  {productName.name}  
+            
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                  
+                          {/* Right Column */}
+                          <div>
+                            <ul className="list-none space-y-2 text-center">
+                              {rightData5.map((productName, index) => (
+                                <motion.li 
+                                  key={index} 
+                                  className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                  initial={{ opacity: 0, x: 20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                >
+                                  {productName.name}
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+      
       
 
 
@@ -450,35 +528,47 @@ export default function ReactiveDyesPage() {
       </motion.h2>
 
       <motion.div 
-        className="overflow-x-auto bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-      >
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Dye Name</TableHead>
-              <TableHead>Dye Code</TableHead>
-              {/* <TableHead>Dye Color</TableHead> */}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {reactivePrintingDyes.map((dye, index) => (
-              <motion.tr 
-                key={dye.code}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              >
-                <TableCell>{dye.name}</TableCell>
-                <TableCell>{dye.code}</TableCell>
-                {/* <TableCell>{dye.color}</TableCell> */}
-              </motion.tr>
-            ))}
-          </TableBody>
-        </Table>
-      </motion.div>
+                          className="grid md:grid-cols-2 gap-8 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-6"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 1 }}
+                        >
+                          {/* Left Column */}
+                          <div>
+                            <ul className="list-none space-y-2 text-center">
+                              {leftData6.map((productName, index) => (
+                                <motion.li 
+                                  key={index} 
+                                  className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                >
+                                  {productName.name}  
+            
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                  
+                          {/* Right Column */}
+                          <div>
+                            <ul className="list-none space-y-2 text-center">
+                              {rightData6.map((productName, index) => (
+                                <motion.li 
+                                  key={index} 
+                                  className="py-2 bg-gray-100 rounded-lg shadow-sm"
+                                  initial={{ opacity: 0, x: 20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                >
+                                  {productName.name}
+                                </motion.li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+      
 
 
     </>
